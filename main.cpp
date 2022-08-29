@@ -157,7 +157,9 @@ void main_loop()
   
 	for (int i = 0; i < 10; i++)
 		physics_update(1.0f / 600.0f);
-	current_time++;
+	
+	if (current_time < 1200)
+		current_time++;
 
 	SDL_Rect rect = {620, (int)(spring_state.motion.y * 200.0f + 300.0f), 40, 40};
 	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
